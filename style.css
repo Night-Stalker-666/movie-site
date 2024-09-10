@@ -1,0 +1,221 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Body */
+body {
+    background-color: #1b1b1b;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Dark/Light Mode Toggle */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header .mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #00ffff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: transform 0.2s;
+}
+
+.header .mode-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    background: linear-gradient(45deg, #2c2c2c, #1b1b1b);
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-text {
+    color: #00ffff;
+    font-size: 3rem;
+    animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 50px #00ffff;
+    }
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#imdb-id {
+    padding: 12px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+body.light-mode #imdb-id {
+    background-color: #ddd;
+    color: #333;
+    border: 1px solid #999;
+}
+
+.neon-button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #00ffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    animation: neon-glow 2s infinite alternate;
+}
+
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+    100% {
+        box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 60px #00ffff;
+    }
+}
+
+/* Embed Box */
+.embed-box {
+    width: 85%;
+    padding: 20px;
+    margin: 20px 0;
+    background: #2c2c2c;
+    border: 3px solid #444;
+    border-radius: 10px;
+    animation: box-glow 3s infinite alternate;
+}
+
+@keyframes box-glow {
+    0% {
+        border-color: #00ffff;
+    }
+    100% {
+        border-color: #ff00ff;
+    }
+}
+
+.movie-container {
+    width: 100%;
+    height: 500px;
+    background-color: #1b1b1b;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-text {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: #999;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer .social-links {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer .social-links a img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer .social-links a:hover {
+    transform: scale(1.2);
+}
+
+.footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: move-neon 3s linear infinite;
+}
+
+@keyframes move-neon {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* anything after 450 size */
+@media only screen and (max-width: 450px) {
+    .animated-text {
+        font-size: 1.8rem;
+    }
+    .input-container {
+        margin-top: 14px;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
