@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Movie Player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="animated-text">Dragon Movie Player</h1>
+            <button id="toggle-mode" class="mode-toggle">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="input-container">
+            <input type="text" id="imdb-id" placeholder="Enter IMDb Movie ID">
+            <button id="watch-now" class="neon-button">Watch Now</button>
+        </div>
+
+        <!-- Box for Embedding Movie -->
+        <div id="embed-box" class="embed-box">
+            <div id="movie-container" class="movie-container">
+                <!-- Movie will be embedded here -->
+                <p class="placeholder-text">Your movie will appear here!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Connect with us:</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://telegram.org" target="_blank">
+                <img src="img/telegram.png" alt="Telegram">
+            </a>
+        </div>
+        <p>© 2024 Dragon Movie Player. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
